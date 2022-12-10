@@ -1,6 +1,6 @@
 {
   "name": "contract-explorer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://montoya.github.io/contract-explorer",
   "private": true,
   "dependencies": {

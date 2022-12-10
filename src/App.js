@@ -104,6 +104,7 @@ const App = () => {
         )}
       </span>
       <h1>🗺️ Contract Explorer</h1>
+      <p>This is a simple contract interface for testing. It has minimal error checking. <b>Use at your own risk!</b> <em>If you make calls to a malicious contract, you can lose all your funds.</em></p>
       <form id="contract-input" onSubmit={takeContract}>
         <fieldset>
           <legend>Enter your contract address and ABI</legend>
@@ -130,13 +131,13 @@ const App = () => {
                 <input type="text" id={input.name} name={input.name} required />
               </div>
             ))}
-          {func.stateMutability === 'payable' || func.payable && (
+          {(func.stateMutability === 'payable' || func.payable) && (
             <div>
               <label htmlFor="etherValue">Value (ETH)</label>
               <input type="number" id="etherValue" name="etherValue" step="0.001" required />
             </div>
           )}
-          {func.stateMutability==="view" || func.constant ? (
+          {(func.stateMutability==="view" || func.constant) ? (
             <>
               <input type="hidden" name="methodType" value="read" />
               <button type="submit">Read</button>
