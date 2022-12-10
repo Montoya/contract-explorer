@@ -1,10 +1,7 @@
 {
   "name": "contract-explorer",
   "version": "0.1.0",
-<<<<<<< HEAD
-=======
   "homepage": "https://montoya.github.io/contract-explorer",
->>>>>>> 23e4592 (init)
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -16,11 +13,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-<<<<<<< HEAD
-=======
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
->>>>>>> 23e4592 (init)
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -43,11 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-<<<<<<< HEAD
-=======
   },
   "devDependencies": {
     "gh-pages": "^4.0.0"
->>>>>>> 23e4592 (init)
   }
 }
