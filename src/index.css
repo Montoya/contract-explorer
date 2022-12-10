@@ -18,7 +18,7 @@ code {
   margin:2rem auto 3rem; 
 }
 
-#connect-button { float:right; }
+#connect-button { float:right; padding-top:0.42rem; }
 
 h1 { font-size:1.5rem; font-weight:normal; }
 
@@ -29,5 +29,6 @@ fieldset legend { padding:0 0.25rem; }
 fieldset div { margin:0 0 0.5rem 0; }
 
 input { width:100%; max-width:20rem; }
+
 
 textarea { width:100%; max-width:50rem; height:8rem; }
