@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -18,23 +17,3 @@
 .env.development.local
 .env.test.local
 .env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-=======
-.idea/
-.vscode/
-node_modules/
-build/
-.DS_Store
-*.tgz
-my-app*
-template/src/__tests__/__snapshots__/
-lerna-debug.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-/.changelog
-.npm/
->>>>>>> 23e4592 (init)
