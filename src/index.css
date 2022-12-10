@@ -5,9 +5,29 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size:12px; 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#page { 
+  width:960px; 
+  margin:2rem auto 3rem; 
+}
+
+#connect-button { float:right; }
+
+h1 { font-size:1.5rem; font-weight:normal; }
+
+label { display:block; margin-bottom:0.25rem; }
+
+fieldset { border:1px solid #808e9b; border-radius:4px; margin-bottom:1rem; padding:1rem; }
+fieldset legend { padding:0 0.25rem; }
+fieldset div { margin:0 0 0.5rem 0; }
+
+input { width:20rem; }
+
+textarea { width:50rem; height:8rem; }

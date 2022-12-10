@@ -1,42 +1,128 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Web3 from 'web3';
 
 const App = () => {
-  // Create a new Web3 instance
-  const web3 = new Web3();
 
-  // Define the ABI file URL
-  const abi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"ApprovalCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"ApprovalQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"ApproveToCaller","type":"error"},{"inputs":[],"name":"BalanceQueryForZeroAddress","type":"error"},{"inputs":[],"name":"MintERC2309QuantityExceedsLimit","type":"error"},{"inputs":[],"name":"MintToZeroAddress","type":"error"},{"inputs":[],"name":"MintZeroQuantity","type":"error"},{"inputs":[],"name":"OwnerQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"OwnershipNotInitializedForExtraData","type":"error"},{"inputs":[],"name":"TransferCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"TransferFromIncorrectOwner","type":"error"},{"inputs":[],"name":"TransferToNonERC721ReceiverImplementer","type":"error"},{"inputs":[],"name":"TransferToZeroAddress","type":"error"},{"inputs":[],"name":"URIQueryForNonexistentToken","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"fromTokenId","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"toTokenId","type":"uint256"},{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"}],"name":"ConsecutiveTransfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"},{"internalType":"bytes32[]","name":"merkleProof","type":"bytes32[]"}],"name":"allowListMint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"id","type":"uint256"}],"name":"getLicense","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"isPublicMintOpen","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxSupply","outputs":[{"internalType":"uint16","name":"","type":"uint16"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"merkleRoot","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"uint8","name":"level","type":"uint8"}],"name":"modifyLicense","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"openPublicMint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"ownerMint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pngsAvailable","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint16","name":"value","type":"uint16"}],"name":"reduceSupply","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"baseURI","type":"string"}],"name":"setBaseURI","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint16","name":"max","type":"uint16"}],"name":"setMaxMintPerWallet","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"_merkleRoot","type":"bytes32"}],"name":"setMerkleRoot","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"toggleOnChainArt","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"togglePNGsAvailable","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenSVG","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenTraits","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"id","type":"uint256"}],"name":"usePng","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"withdrawFunds","outputs":[],"stateMutability":"nonpayable","type":"function"}]; 
-  const contract = new web3.eth.Contract(abi);
-  const contractMethods = new Array(); 
-  for (var i = 0; i <  contract.options.jsonInterface.length; i++) { 
-    var item = contract.options.jsonInterface[i]; 
-    if(item.type === "function") { 
-      item.count = i; 
-      contractMethods.push(item); 
+  const [contractAddress, setContractAddress] = useState(); 
+  const [contractAbi, setContractAbi] = useState(); 
+  const [contractMethods, setContractMethods] = useState([]); 
+  const [connected, setConnected] = useState(false); 
+
+  // Create a new Web3 instance
+  let web3 = new Web3(window.ethereum);
+
+  const connect = async (event) => { 
+    if(!window.ethereum) { 
+      alert("Please install MetaMask to proceed"); 
+      return; 
     }
+    await window.ethereum.request({ method: 'eth_requestAccounts', params: [] });
+    web3 = new Web3(window.ethereum); 
+    setConnected(true); 
+  }
+
+  const takeContract = event => { 
+    event.preventDefault();
+
+    const data = new FormData(event.target); 
+
+    const address = data.get("contract-address");
+
+    if(!web3.utils.isAddress(address)) { return; }
+    
+    const abi = JSON.parse(data.get("contract-abi")); 
+
+    const contract = new web3.eth.Contract(abi); 
+
+    const items = []; 
+    for (var i = 0; i <  contract.options.jsonInterface.length; i++) { 
+      var item = contract.options.jsonInterface[i]; 
+      if(item.type === "function") { 
+        item.count = i; 
+        item.address = address; 
+        items.push(item); 
+      }
+    }
+
+    setContractAddress(address); 
+    setContractAbi(abi); 
+    setContractMethods(items); 
   }
 
     // Handle the form submission
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
 
-    // Retrieve the form data
-    const data = new FormData(event.target);
+    const data = new FormData(event.target); 
 
-    const dataString = [...data.entries()];
+    var thisMethod = {name:"",value:null,params:[]}; 
+    // special inputs: method, contract, value
+    for(const key of data.keys()) { 
+      if(key==="methodName") { 
+        thisMethod.name = data.get(key); 
+      }
+      else if(key==="methodType") { 
+        thisMethod.type = data.get(key); 
+      }
+      else if(key==="etherValue") {
+        thisMethod.value = data.get(key); 
+      }
+      else { 
+        thisMethod.params.push(data.get(key)); 
+      }
+    }
 
-    alert(dataString); 
+    const contract = new web3.eth.Contract(contractAbi, contractAddress); 
+
+    let result; 
+
+    const addresses = await window.ethereum.request({ method: 'eth_requestAccounts', params: [] }); 
+    const from = addresses[0]; 
+
+    if(thisMethod.value !== null) { 
+      result = await contract.methods[thisMethod.name](...thisMethod.params).send({from:from,value:thisMethod.value}); 
+    }
+    else if(thisMethod.type === "write") { 
+      result = await contract.methods[thisMethod.name](...thisMethod.params).send({from:from}); 
+    }
+    else {
+      result = await contract.methods[thisMethod.name](...thisMethod.params).call(); 
+    }
+
+    alert(result); 
+
   };
 
   // Generate a form for the write functions
   return (
-    <>
-    {contractMethods.map(func => (
+    <div id="page">
+      <span id="connect-button">
+        {connected ? (
+          <button onClick={connect} disabled>Connected</button>
+        ) : (
+          <button onClick={connect}>Connect</button>
+        )}
+      </span>
+      <h1>🗺️ Contract Explorer</h1>
+      <form id="contract-input" onSubmit={takeContract}>
+        <fieldset>
+          <legend>Enter your contract address and ABI</legend>
+          <div>
+            <label htmlFor="contract-address">Contract Address</label>
+            <input type="text" id="contract-address" name="contract-address" required />
+          </div>
+          <div>
+            <label htmlFor="contract-abi">Contract ABI (JSON)</label>
+            <textarea id="contract-abi" name="contract-abi" required></textarea>
+          </div>
+          <button type="submit">Parse</button>
+        </fieldset>
+      </form>
+    {contractMethods.length > 0 && contractMethods.map(func => (
       <form id={"form-"+func.count+"-"+func.name} onSubmit={handleSubmit}>
         <fieldset>
           <legend>{func.name}</legend>
-          <input type="hidden" name="method" value={func.name} />
+          <input type="hidden" name="methodName" value={func.name} />
           {func.inputs.length > 0 &&
             func.inputs.map(input => (
               <div>
@@ -44,17 +130,27 @@ const App = () => {
                 <input type="text" id={input.name} name={input.name} required />
               </div>
             ))}
-          {func.stateMutability === 'payable' && (
+          {func.stateMutability === 'payable' || func.payable && (
             <div>
-              <label htmlFor="value">Value (ETH)</label>
-              <input type="number" id="value" name="value" step="0.001" required />
+              <label htmlFor="etherValue">Value (ETH)</label>
+              <input type="number" id="etherValue" name="etherValue" step="0.001" required />
             </div>
           )}
-          <button type="submit">{func.stateMutability==="view" ? 'Read' : 'Write'}</button>
+          {func.stateMutability==="view" || func.constant ? (
+            <>
+              <input type="hidden" name="methodType" value="read" />
+              <button type="submit">Read</button>
+            </>
+          ) : (
+            <>
+              <input type="hidden" name="methodType" value="write" />
+              <button type="submit">Write</button>
+            </>
+          )}
         </fieldset>
       </form>
     ))}
-    </>
+    </div>
   );
 };
 
