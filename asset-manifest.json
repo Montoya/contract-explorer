@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/contract-explorer/static/css/main.e6c13ad2.css",
+    "main.js": "/contract-explorer/static/js/main.905efb6f.js",
+    "static/js/787.2a81787f.chunk.js": "/contract-explorer/static/js/787.2a81787f.chunk.js",
+    "index.html": "/contract-explorer/index.html",
+    "main.e6c13ad2.css.map": "/contract-explorer/static/css/main.e6c13ad2.css.map",
+    "main.905efb6f.js.map": "/contract-explorer/static/js/main.905efb6f.js.map",
+    "787.2a81787f.chunk.js.map": "/contract-explorer/static/js/787.2a81787f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.905efb6f.js"
+  ]
+}
