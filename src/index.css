@@ -15,10 +15,12 @@ code {
 
 #page { 
   max-width:960px; 
-  margin:2rem auto 3rem; 
+  margin:1rem auto 3rem; 
 }
 
-#connect-button { float:right; padding-top:0.42rem; }
+h1 { float:left; margin-right:2rem; }
+#connect-button { float:left; padding-top:1.42rem; }
+#disclaimer { clear:left; }
 
 h1 { font-size:1.5rem; font-weight:normal; }
 

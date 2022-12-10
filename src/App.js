@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import GithubCorner from 'react-github-corner';
 import Web3 from 'web3';
 
 const App = () => {
@@ -96,6 +97,7 @@ const App = () => {
   // Generate a form for the write functions
   return (
     <div id="page">
+      <h1>🗺️ Contract Explorer</h1>
       <span id="connect-button">
         {connected ? (
           <button onClick={connect} disabled>Connected</button>
@@ -103,8 +105,7 @@ const App = () => {
           <button onClick={connect}>Connect</button>
         )}
       </span>
-      <h1>🗺️ Contract Explorer</h1>
-      <p>This is a simple contract interface for testing. It has minimal error checking. <b>Use at your own risk!</b> <em>If you make calls to a malicious contract, you can lose all your funds.</em></p>
+      <p id="disclaimer">This is a simple contract interface for testing. It has minimal error checking. <b>Use at your own risk!</b> <em>If you make calls to a malicious contract, you can lose all your funds.</em></p>
       <form id="contract-input" onSubmit={takeContract}>
         <fieldset>
           <legend>Enter your contract address and ABI</legend>
@@ -151,6 +152,7 @@ const App = () => {
         </fieldset>
       </form>
     ))}
+      <GithubCorner href="https://github.com/Montoya/contract-explorer" />
     </div>
   );
 };
