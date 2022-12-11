@@ -89,8 +89,8 @@ const App = () => {
     else {
       result = await contract.methods[thisMethod.name](...thisMethod.params).call(); 
     }
-
-    alert(result); 
+    
+    alert(JSON.stringify(result)); 
 
   };
 
