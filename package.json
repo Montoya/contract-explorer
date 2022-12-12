@@ -2,6 +2,7 @@
   "name": "contract-explorer",
   "version": "1.0.0",
   "homepage": "https://montoya.github.io/contract-explorer",
+  "license" : "MIT",
   "private": true,
   "dependencies": {
     "@metamask/sdk": "^0.1.0",
